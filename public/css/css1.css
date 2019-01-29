@@ -1,0 +1,6 @@
+*{margin:0;padding: 0;}
+header, nav, aside, article, footer{border: thin #ccc solid;float: left;}
+aside{min-height: 300px!important}
+article{min-height: 800px!important,margin-bottom:20px;}
+.container-fluid{margin: 0!important;padding: 0!important}
+aside a{display: block;background-color: #ccc;margin: 5px;}
