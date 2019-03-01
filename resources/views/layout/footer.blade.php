@@ -1,8 +1,8 @@
 <style>
 footer{background-color: #10473f;clear: both;position: relative;left: 0;bottom: 0;margin-top: 20px;}
 	.head h5{text-transform: uppercase;font-weight: 600}
-	.leftt{width: 850px;float: left;}
-	.hotro{width: 300px;float: left;margin-right: 30px;}
+	.leftt{width: 75%;float: left;}
+	.hotro{width: 30%;float: left;margin-right: 30px;}
 	.block{display: block;}
 	.head{color: #fff;border-bottom: 1px solid #2f6961;margin-top: 30px;margin-bottom: 15px;}
 	.content ul li{list-style: none;}
@@ -16,7 +16,7 @@ footer{background-color: #10473f;clear: both;position: relative;left: 0;bottom: 
 	.info{border-top: 1px solid #021310;width: 100%;display: inline-block;clear: both;color: #fff;}
 	.info p{margin-top: 10px;}
 	.padding a{color:#4bffe3;text-decoration: none;}
-	.rightt{float: left;width: 250px;}
+	.rightt{float: left;width: 25%;}
 	.contact ul li{padding: 5px;}
 	.contact a{text-decoration: none;color: #fff;}
 	.contact a:hover{color: red;}

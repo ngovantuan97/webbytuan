@@ -3,6 +3,9 @@
 
 Route::get('/','CController@home');
 
+Route::post('changeInfo/{id}','CController@updateAcount');
+Route::get('changeInfo/{id}','CController@changeAcount');
+Route::get('infoAcount','CController@getInfo');
 Route::post('lienhe','CController@conTactPost');
 Route::get('lienhe','CController@conTact');
 Route::get('newdetails/{id}','CController@newDetails');

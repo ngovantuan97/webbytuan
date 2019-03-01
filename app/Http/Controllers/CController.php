@@ -13,8 +13,41 @@ use App\donhang;
 use App\orderDetails;
 use App\tintuc;
 use App\lienhe;
+
 class CController extends Controller
 {
+	//thong tin tài khoản
+	function updateAcount($id, Request $request)
+	{
+		$hoTen=$request->input('hoTen');
+		$email=$request->input('email');
+		$diaChi=$request->input('diaChi');
+		$dienThoai=$request->input('dienThoai');
+		$tenDangNhap=$request->input('tenDangNhap');
+		$matKhau=md5($request->input('matKhau'));
+		$ktra=member::where('matKhau',$matKhau)->where('id',$id)->first();
+		if (asset($ktra))
+		{
+			$alert='Mật khẩu sai hoặc không đúng';
+			return redirect()->back()->with(['alert'=>$alert]);
+		}
+		member::where('id',$id)->update(['hoTen'=>$hoTen,'tenDangNhap'=>$tenDangNhap,'diaChi'=>$diaChi,'dienThoai'=>$dienThoai,'email'=>$email,'matKhau'=>$matKhau]);
+		session()->flush('user');
+		return view('user.changesuccess');
+
+	}
+	function changeAcount($id)
+	{
+		$title="Thay đổi thông tin tài khoản";
+		$info=member::where('id',$id)->where('status','1')->first();
+		return view('user.changeAcount',compact('title','info'));
+	}
+	function getInfo()
+	{
+		$title="Thông tin tài khoản";
+		$info=member::where('tenDangNhap',session('user'))->where('status','1')->first();
+		return view('user.infoAcount',compact('title','info'));
+	}
 	//liên hệ
 	function conTactPost(Request $request)
 	{
@@ -57,7 +90,7 @@ class CController extends Controller
 		$dienThoai=$request->input('dienThoai');
 		$diaChi=$request->input('diaChi');
 		$tenDangKyTonTai=member::where('tenDangNhap',$tenDangNhap)->where('email',$email)->get();
-		if(count($tenDangKyTonTai)>0)
+		if (count($tenDangKyTonTai)>0)
 		{
 			$alert='Tên này đã được sử dụng';
 			return redirect()->back()->with(['alert'=>$alert]);
@@ -83,7 +116,7 @@ class CController extends Controller
 		// $title1='Thanh toán';
 		$tenDangNhap=$request->input('tenDangNhap');
 		$matKhau=md5($request->input('matKhau'));
-		$admin=member::where('tenDangNhap',$tenDangNhap)->where('matKhau',$matKhau)->first();
+		$admin=member::where('tenDangNhap', $tenDangNhap)->where('matKhau', $matKhau)->first();
 		if($admin==null)
 		{
 			$alert='username or password wrong!';
@@ -133,7 +166,7 @@ class CController extends Controller
 	function orderCart()
 	{
 		$title='Thanh toán';
-		if(!session('user'))
+		if (!session('user'))
 		{
 			return redirect('login');
 		}
@@ -144,7 +177,7 @@ class CController extends Controller
 	function addToCart($id)
 	{
 		// $title='Giỏ hàng';
-		if(!session("cart.$id"))
+		if (!session("cart.$id"))
 		{
 			session(["cart.$id"=>1]);
 		}

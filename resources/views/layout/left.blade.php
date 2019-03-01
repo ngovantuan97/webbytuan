@@ -8,6 +8,7 @@
 	.new .anhtintuc{margin-bottom: 20px;margin-top: 20px;}
 	.new .tieuDe{text-decoration: none;color: #000;background-color:#fff;}
 	.new .tieuDe:hover{color:#009a82 }
+	/*.ads img{padding:0 8px;margin-top: 20px;}*/
 </style>
 <aside class="col-md-2 left">
 <?php $hangs=DB::table('hangsanxuats')->get()?>
@@ -25,4 +26,12 @@
 	<div class="noidungs"><a href="" class="tieuDe">{{substr($tt->tieuDe,0,33).'...'}}</a><p><img src="{{asset('public/img/dongho.png')}}" alt="" width="6%"> {{$tt->ngayDang}}</p></div>
 </section>
 @endforeach -->
+<!-- <div class="clearfix"></div>
+<div class="ads">
+	<img src="{{asset('public/img/banner-l-1.png')}}" alt="" width="100%"><br>
+	<img src="{{asset('public/img/banner-l-2.png')}}" alt="" width="100%"><br>
+	<img src="{{asset('public/img/banner-l-3.png')}}" alt="" width="100%"><br>
+	<img src="{{asset('public/img/banner-l-4.png')}}" alt="" width="100%"><br>
+	<img src="{{asset('public/img/banner-l-7.png')}}" alt="" width="100%"><br>
+</div> -->
 </aside>

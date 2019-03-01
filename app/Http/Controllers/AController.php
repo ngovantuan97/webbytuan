@@ -79,12 +79,12 @@ class AController extends Controller
 	}
 	function order($status)
 	{	
-		if($status=='1')
+		if ($status=='1')
 		{
 			$title='Đơn hàng chưa xử lý';
 			$orders=donhang::where('status','1')->orderBy('id','desc')->get();
 		}
-		else if($status=='2')
+		else if ($status=='2')
 		{
 			$title='Đơn hàng đang xử lý';
 			$orders=donhang::where('status','2')->orderBy('id','desc')->get();
@@ -122,7 +122,7 @@ class AController extends Controller
 		$moTa=$request->input('moTa');
 		$status=$request->input('status');
 		$ktratrungtieude=tintuc::where('tieuDe',$tieuDe)->get();
-		if(count($ktratrungtieude)>0)
+		if (count($ktratrungtieude)>0)
 		{
 			$alert='Tên này đã có sẵn';
 			return redirect()->back()->with(['alert'=>$alert]);
@@ -149,7 +149,7 @@ class AController extends Controller
 		$moTa=$request->input('moTa');
 		$status=$request->input('status');
 		$ktratrungtieude=tintuc::where('tieuDe',$tieuDe)->get();
-		if(count($ktratrungtieude)>0)
+		if (count($ktratrungtieude)>0)
 		{
 			$alert='Tên này đã có sẵn';
 			return redirect()->back()->with(['alert'=>$alert]);
@@ -160,7 +160,7 @@ class AController extends Controller
  	//admin
 	function admin()
 	{
-		if(session('admin'))
+		if (session('admin'))
 			return view('admin.controlpanel');
 		return view('admin.login');
 
@@ -170,7 +170,7 @@ class AController extends Controller
 		$username=$request->input('username');
 		$password=md5($request->input('password'));
 		$admin=admin::where('username',$username)->where('password',$password)->first();
-		if($admin==null)
+		if ($admin==null)
 		{
 			$alert='username or password wrong!';
 			return view('admin.login', compact('alert'));
@@ -230,7 +230,7 @@ class AController extends Controller
 		$tenHang=$request->input('tenHang');
 		$status=$request->input('status');
 		$ktratrungtenhang=hangsanxuat::where('tenHang',$tenHang)->where('id','!=',$id)->get();
-		if(count($ktratrungtenhang)>0)
+		if (count($ktratrungtenhang)>0)
 		{
 			$alert='Tên này đã có sẵn';
 			return redirect()->back()->with(['alert'=>$alert]);
@@ -257,7 +257,7 @@ class AController extends Controller
 		$mucGiaDen=$request->input('mucGiaDen');
 		$status=$request->input('status');
 		$ktratrungtenMG=mucgia::where('tenMucGia',$tenMucGia)->get();
-		if(count($ktratrungtenMG)>0)
+		if (count($ktratrungtenMG)>0)
 		{
 			$alert='Tên mức giá này đã có sẵn';
 			return redirect()->back()->with(['alert'=>$alert]);
@@ -283,7 +283,7 @@ class AController extends Controller
 		$mucGiaDen=$request->input('mucGiaDen');
 		$status=$request->input('status');
 		$ktratrungtenMG=mucgia::where('tenMucGia',$tenMucGia)->where('id','!=',$id)->get();
-		if(count($ktratrungtenMG)>0)
+		if (count($ktratrungtenMG)>0)
 		{
 			$alert='Tên mức giá này đã có sẵn';
 			return redirect()->back()->with(['alert'=>$alert]);
@@ -315,7 +315,7 @@ class AController extends Controller
 		$moTa=$request->input('moTa');
 		$status=$request->input('status');
 		$ktratrungtenSP=sanpham::where('tenSanPham',$tenSanPham)->get();
-		if(count($ktratrungtenSP)>0)
+		if (count($ktratrungtenSP)>0)
 		{
 			$alert='Tên sản phẩm này đã có sẵn';
 			return redirect()->back()->with(['alert'=>$alert]);
@@ -323,11 +323,11 @@ class AController extends Controller
 		$anh=time().'_'.$anhSanPham->getClientOriginalName();
 		$extension=substr($anh,strlen($anh)-3);
 		$extension4=substr($anh,strlen($anh)-4);
-		if($extension=='png'||$extension=='PNG'||$extension=='jpg'||$extension=='JPG'||$extension=='gif'||$extension=='GIF'||$extension4=='jpeg'||$extension4=='JPEG')
+		if ($extension=='png'||$extension=='PNG'||$extension=='jpg'||$extension=='JPG'||$extension=='gif'||$extension=='GIF'||$extension4=='jpeg'||$extension4=='JPEG')
 		{
 			$anhSanPham->move('public/img',$anh);
 			sanpham::insert(['maHang'=>$maHang,'tenSanPham'=>$tenSanPham,'anhSanPham'=>$anh,'giaSanPham'=>$giaSanPham,'moTa'=>$moTa,'status'=>$status]);
-		}else{
+		} else {
 			$alert='file không đúng định dạng!';
 			return redirect()->back()->with(['alert'=>$alert]);
 		}
@@ -354,7 +354,7 @@ class AController extends Controller
 		$moTa=$request->input('moTa');
 		$status=$request->input('status');
 		$ktratrungtenSP=sanpham::where('tenSanPham',$tenSanPham)->where('id','!=',$id)->get();
-		if(count($ktratrungtenSP)>0)
+		if (count($ktratrungtenSP)>0)
 		{
 			$alert='Tên mức giá này đã có sẵn';
 			return redirect()->back()->with(['alert'=>$alert]);

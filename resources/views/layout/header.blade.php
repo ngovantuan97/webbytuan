@@ -1,4 +1,5 @@
 <style>
+	.lienHe{background-color:#009a82;}
 	header .timkiem {float: left;}
 	form{margin-top: 20px;}
 	.logo{float: left;margin:10px 20px 30px 20px;}
@@ -14,7 +15,6 @@
 	.timkiem input{width: 400px;}
 	.hread{float: right;}
 	.lienhe{float: left;margin-right: 10px;}
-	.lienHe{background-color:#009a82;}
 	.lienH a{border-right:1px solid #ccc;}
 	.lienH a i{color: #fff;padding: 5px;margin-right: 5px;}
 	.lienH a:nth-child(1){border-left: 1px solid #ccc;}
@@ -57,7 +57,7 @@
 			<div><i class="fas fa-cart-plus"></i><a href="{{url('cart')}}">Giỏ hàng</a></div>
 		</div>
 		<div class="col-md-2 user">
-			<div><p>Xin chào: {{session('user')}}</p> <button onclick="location='{{url('logout')}}'" class="btn btn-outline-success">Logout</button></div>
+			<div><p class="acount">Xin chào: <a style="text-decoration: none;color: red;" href="{{url('infoAcount')}}">{{session('user')}}</a></p><button onclick="location='{{url('logout')}}'" class="btn btn-outline-success">Logout</button></div>
 		</div>
 	</section>
 </header>
