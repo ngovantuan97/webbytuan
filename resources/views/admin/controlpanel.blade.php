@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ADMIN-CONTROLPANEL</title>
+	<title>ADMIN</title>
 	<link rel="stylesheet" href="{{asset('public/css/app.css')}}">
 	<link rel="stylesheet" href="{{asset('public/css/css.css')}}">
 	<!-- Latest compiled and minified CSS -->
@@ -18,6 +18,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<script src="{{asset('public/ckeditor/ckeditor.js')}}"></script>
+	<link rel="shortcut icon" type="image/png" href="public/img/logo_3.png"/>
 </head>
 <style>article{border-right: none;border-bottom: none;border-top: none;}
 	body{background: #fff}

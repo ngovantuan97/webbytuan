@@ -18,17 +18,20 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="shortcut icon" type="image/png" href="public/img/logo_3.png"/>
 </head>
 <style>
-	article{min-height: 800px; margin-bottom: 20px;border: none;}
+	article{min-height: 1200px !important; margin-bottom: 20px;border: none;}
 	aside{min-height: 800px;border: none;margin-bottom: 30px;}
 	header,nav{border: none;}
 	body{font-family: sans-serif;}
 </style>
 <body>
 	<section class="container-fluid">
-		@include("layout/header")
-		@include("layout/menungang")
+		<section>
+			@include("layout/header")
+			@include("layout/menungang")
+		</section>
 		
 		<section class="container-fluid">
 			@include("layout/left")
@@ -37,7 +40,9 @@
 			</article>
 			@include("layout/right")
 		</section>
-		@include("layout/footer")
+		<section class="main_footer">
+			@include("layout/footer")
+		</section>
 	</section>
 	<script src="{{asset('public/js/app.js')}}"></script>
 </body>

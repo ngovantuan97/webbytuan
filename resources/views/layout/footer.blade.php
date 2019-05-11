@@ -103,7 +103,7 @@ footer{background-color: #10473f;clear: both;position: relative;left: 0;bottom: 
 			</div>
 			<div class="info">
 				<p><strong>CÔNG TY CỔ PHẦN XÂY DỰNG VÀ ĐẦU TƯ THƯƠNG MẠI NGÔ TUÂN</strong></p>
-				<p>Địa chỉ : 5 Vũ Ngọc Phan, Q.Đống Đa, Hà Nội</p>
+				<p>Địa chỉ : 30 Phan Đình Giót, Q.Thanh Xuân, Hà Nội</p>
 				<p>Mã số thuế : 0106713191. ( Đăng ký lần đầu : ngày 15 tháng 12 năm 2014, Đăng ký thay đổi ngày 09/01/2015)</p>
 			</div>
 		</div>
@@ -128,7 +128,7 @@ footer{background-color: #10473f;clear: both;position: relative;left: 0;bottom: 
 				</div>
 				<div class="content">
 					<ul class="contact">
-						<li class="web"><i class="fab fa-internet-explorer" style="color: #fff;margin-right: 5px;"></i> <a href="">devmaster.edu.vn</a></li>
+						<li class="web"><i class="fab fa-internet-explorer" style="color: #fff;margin-right: 5px;"></i> <a href="">tuannaem.edu.vn</a></li>
 						<li class="email" ><i class="fas fa-envelope" style="color: #fff;margin-right: 5px;"></i> <a href=""> tuanngo7@gmail.com</a></li>
 						<li class="phone"><i class="fas fa-phone" style="color: #fff;margin-right: 5px;"></i><a href=""> 01234567</a></li>
 					</ul>

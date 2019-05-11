@@ -26,7 +26,7 @@ class CController extends Controller
 		$tenDangNhap=$request->input('tenDangNhap');
 		$matKhau=md5($request->input('matKhau'));
 		$ktra=member::where('matKhau',$matKhau)->where('id',$id)->first();
-		if (asset($ktra))
+		if (!asset($ktra))
 		{
 			$alert='Mật khẩu sai hoặc không đúng';
 			return redirect()->back()->with(['alert'=>$alert]);

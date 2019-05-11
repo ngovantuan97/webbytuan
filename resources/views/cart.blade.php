@@ -19,8 +19,9 @@
 				<th>Ảnh mô tả</th>
 				<th>Tên sản phẩm</th>
 				<th>Giá</th>
-				<th>Số lượng</th>
 				<th>Thành Tiền</th>
+				<th>Số lượng</th>
+				
 				<th>Xóa</th>
 			</tr>
 			@foreach($products as $product)
