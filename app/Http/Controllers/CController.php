@@ -219,8 +219,9 @@ class CController extends Controller
 	{
 		$title='Tuân Mobile';
 		// $sphams=DB::table('sanphams')->get();
-		$sphams=sanpham::paginate(12);
-		return view('home',compact('title','sphams'));
+		$sphams=sanpham::where('status','1')->paginate(8);
+		$phukien=sanpham::where('status','2')->paginate(8);
+		return view('home',compact('title','sphams','phukien'));
 	}
 	function chiTietSanPham($id)
 	{

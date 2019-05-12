@@ -74,4 +74,21 @@
 </section>
 @endforeach
 <section class="panition">{{$sphams->render()}}</section>
+@foreach( $phukien as $pk)
+<section class="container-fluid sanPhamHome">	
+	<section class="col-md-3 sanpham">
+		<div class="img">
+			<a href=""><img src="public/img/{{$pk->anhSanPham}}" alt="" width="100%">
+			<div class="marsk"><a href="{{url('chitietsanpham/'.$sp->id)}}">Xem chi tiết</a></div>
+			</a>
+			
+		</div>
+		<div class="tenSanPham"><a href="#">{{$pk->tenSanPham}}</a></div>
+		<div class="giaSanPham">{{number_format($pk->giaSanPham,0,',','.')}} VNĐ</div>
+		
+		<button class="btn btn-ouline-success" onclick="location='{{url('cart/'.$pk->id)}}'">Add to cart</button>
+	</section>
+</section>
+@endforeach
+<section class="panition">{{$phukien->render()}}</section>
 @endsection

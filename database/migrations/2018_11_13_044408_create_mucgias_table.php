@@ -16,8 +16,8 @@ class CreateMucgiasTable extends Migration
         Schema::create('mucgias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tenMucGia',50);
-            $table->integer('mucGiaTu');
-            $table->integer('mucGiaDen');
+            $table->bigInteger('mucGiaTu');
+            $table->bigInteger('mucGiaDen');
             $table->tinyinteger('status')->default(1);
             $table->timestamps();
         });

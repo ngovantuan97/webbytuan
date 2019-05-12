@@ -18,9 +18,9 @@ class CreateSanphamsTable extends Migration
             $table->integer('maHang');
             $table->string('tenSanPham',50);
             $table->string('anhSanPham',100);
-            $table->bigint('giaSanPham');
+            $table->integer('giaSanPham');
             $table->text('moTa');
-            $table->tinyinteger('status')->default(1);
+            $table->tinyinteger('status')->default();
         });
     }
 
